@@ -1,0 +1,57 @@
+import java.util.*;
+import java.util.Scanner;
+
+public class DQ {
+	
+	Scanner obj=new Scanner(System.in);
+	
+	public void Dequeue()
+	{
+		ArrayDeque<Integer> dq= new ArrayDeque<Integer>();
+		int op,flag=0,data;
+		while(flag!=1)
+		{
+			System.out.println("\n1.Add First \n2.Add last \n3.Display head \n4.Display Tail \n5.Remove First \n6.Remove Last \n7.Exit");
+			op=obj.nextInt();
+		switch(op)
+		{
+		case 1:
+			System.out.println("Enter data to be added in Deque-: ");
+			data=obj.nextInt();
+			dq.addFirst(data);
+			break;
+			
+		case 2:
+			System.out.println("Enter data to be added in Deque-: ");
+			data=obj.nextInt();
+			dq.addLast(data);
+			break;
+			
+		case 3:
+			System.out.println("Element at first position is-:  "+dq.peekFirst());
+			break;
+			
+		case 4:
+			System.out.println("Element at last position is-:  "+dq.peekLast());
+			break;
+			
+		case 5:
+			System.out.println("Data removed from front is-: " +dq.pollFirst());
+			break;
+			
+		case 6:
+			System.out.println("Data removed from Last is-: " +dq.pollLast());
+			break;
+			
+		case 7:
+			flag=1;
+			break;
+			
+		default:
+			System.out.println("Enter valid choice!!");
+			break;
+		}
+		}
+		
+	}
+}

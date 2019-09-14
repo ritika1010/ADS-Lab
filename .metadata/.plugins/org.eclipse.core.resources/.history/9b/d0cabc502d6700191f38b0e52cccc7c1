@@ -1,0 +1,61 @@
+package Specific;
+import java.util.Scanner;
+public class a11 {
+
+	public static void main(String[] args) {
+		SLL s= new SLL();
+		int op,flag=0,data;
+		Scanner obj= new Scanner(System.in);
+		while(flag!=1)
+		{
+System.out.println("\n1.Insert \n2.IsEmpty \n3.Display \n4.Delete \n5.Size \n6.Exit \n Enter your choice-:");
+			op=obj.nextInt();
+			
+			switch(op)
+			{
+			case 1:
+				System.out.println("Enter data to be inserted-: ");
+				data=obj.nextInt();
+				s.add();
+				break;
+				
+			case 2:
+				data=s.isEmpty();
+				if(data==1)
+				{
+					System.out.println("Linked List is Empty!!");
+				}
+				else
+				{
+					System.out.println("Linked List is not Empty!!");
+				}
+				break;
+				
+			case 3:
+				s.display();
+				break;
+				
+			case 4:
+				System.out.println("Enter data to be deleted-: ");
+				data=obj.nextInt();
+				s.remove();
+				break;
+				
+			case 5:
+				data=s.size();
+				System.out.println("Size of Linked List is-: "+ data);
+				break;
+				
+			case 6:
+				flag=1;
+				break;
+				
+				default:
+					System.out.println("Enter valid choice!!");
+			}
+			obj.close();
+		}
+
+	}
+
+}

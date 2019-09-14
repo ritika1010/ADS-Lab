@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+abstract class GeneralStack 
+{
+	GeneraStackl()
+	{}
+	int ch,flag,data;
+	Scanner in=new Scanner(System.in);
+	void GenFunc()
+	{
+		do{
+			flag=0;
+			int ch;
+			Scanner in=new Scanner(System.in);
+			ch=in.nextInt();
+			System.out.println("1.push");
+			System.out.println("2.pop");
+			System.out.println("3.top");
+			switch(ch)
+			{
+				case 1: push();
+				break;
+				
+				case 2:data=pop();
+				if(data!=0)
+				{
+					System.out.println(" is data from stack");
+				}
+				break;
+				case 3:data=top();
+				if(data!=0)
+				{
+					System.out.println(" is data from stack");
+				}
+				break;
+				
+			}
+			
+		}while(flag==0);
+		
+	}
+	abstract protected void push();
+	abstract protected int pop();
+	abstract protected int top();
+
+}

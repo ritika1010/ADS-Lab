@@ -1,0 +1,78 @@
+import java.util.Scanner;
+
+class IntStack extends GeneralStack
+{
+	int[] stack=new int[50];
+	int t;
+	IntStack()
+	{
+		t=-1;
+	}
+	protected void push()
+	{
+		Scanner x=new Scanner(System.in);
+		int d;
+		d=x.nextInt();
+		RuntimeException re=new RuntimeException("Overflow");
+		try
+		{
+			if(t>=50)
+			{
+				throw re;
+			}
+			else
+			{
+				stack[++t]=d;
+			}
+		}
+		catch(RuntimeException re)
+		{
+			System.out.println("Exception Caught: " + re);
+		}
+		
+	}
+	protected int pop()
+	{
+		int d;
+		RuntimeException re=new RuntimeException("Underflow");
+		try
+		{
+			if(t==-1)
+			{
+				throw re;
+			}
+			else
+			{
+				d=stack[t--];
+				System.out.println(d);
+				return d;
+			}
+		}
+		catch(RuntimeException re)
+		{
+			System.out.println("Exception Caught: " + re);
+		}
+	}
+	protected int top()
+	{
+		int d;
+		RuntimeException re=new RuntimeException("Underflow");
+		try
+		{
+			if(t==-1)
+			{
+				throw re;
+			}
+			else
+			{
+				d=stack[t];
+				System.out.println(d);
+				return d;
+			}
+		}
+		catch(RuntimeException re)
+		{
+			System.out.println("Exception Caught: " + re);
+		}
+	}
+}

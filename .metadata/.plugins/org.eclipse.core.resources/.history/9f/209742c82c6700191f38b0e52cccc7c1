@@ -1,0 +1,57 @@
+package Specific;
+import Common.CommonList;
+import java.util.Scanner;
+public class SLL 
+{
+	node head;
+	node tail;
+	int sizen;
+
+	SLL()
+	{
+		head=null;
+		tail=null;
+		sizen=0;
+	}
+	
+	void add()
+	{
+		int d;
+		System.out.print("Enter data");
+		Scanner o=new Scanner(System.in);
+		d=o.nextInt();
+		if(head==null)
+		{
+			head=new node(d);
+			sizen++;
+		}
+		else
+		{
+			node p;
+			p=head;
+			while(p!=null)
+			{
+				p=p.next;
+			}
+			p=new node(d);
+			sizen++;
+		}
+		o.close();
+	}
+	
+	int size()
+	{
+		return sizen;
+	}
+	
+	void display()
+	{
+		node p;
+		p=head;
+		while(p!=null)
+		{
+			System.out.println(p.data);
+			p=p.next;
+		}
+	}
+}

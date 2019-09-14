@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+abstract class General {
+	General()
+	{}
+	Scanner inc=new Scanner(System.in);
+	char c;
+	int ch;
+	Scanner in=new Scanner(System.in);
+	void GenFunc()
+	{
+		do{
+			int ch;
+			Scanner in=new Scanner(System.in);
+			ch=in.nextInt();
+			System.out.println("1.Getdata");
+			System.out.println("2.displaydata");
+			switch(ch)
+			{
+				case 1: getData();
+				break;
+				
+				case 2:display();
+				break;
+			}
+			
+			System.out.println("continue?");
+			c=inc.next().charAt(0);
+		
+	}while(c=='y');
+	
+	
+
+}
